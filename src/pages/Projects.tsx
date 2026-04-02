@@ -41,7 +41,7 @@ const projects: Project[] = [
       "MediWox is a blockchain-based medical records management system that enables secure, tamper-proof storage and controlled sharing of patient health data. It leverages smart contracts and IPFS to ensure data integrity, privacy, and seamless access for authorized healthcare providers.",
     tech: ["Solidity", "React.js", "Node.js", "Ethers.js", "IPFS (Pinata)", "MongoDB"],
     image: "/Static/mediwox.png",
-    links: [{ label: "Demo", href: "https://projects.aircwou.in/vid/MediWox.mp4" }],
+    links: [{ label: "Demo", href: "https://www.aircwou.in/products/mediwox?from=all" }],
   },
  
 ];
