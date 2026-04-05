@@ -7,3 +7,5 @@ export const RESUME_LINKS = {
   DOWNLOAD:
     "https://drive.google.com/uc?export=download&id=1uCEkulcDAKACxqfsud1FCp1xcfiNG8Rj",
 } as const;
+
+export const BLOG_FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@samir.woxsen";
