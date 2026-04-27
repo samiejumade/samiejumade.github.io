@@ -8,6 +8,30 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: "L.E.A.P. Educational Blockchain Platform",
+    description:
+      "An enterprise-grade, Coursera-style e-learning platform for Woxsen University serving 350+ MBA students to complete mandatory pre-admission coursework and earn cryptographically secure, tamper-proof certificates issued on a private Hyperledger Besu blockchain network.",
+    tech: [
+      "Hyperledger Besu",
+      "Solidity",
+      "Next.js",
+      "PostgreSQL",
+      "ethers.js",
+    ],
+    image: "/Static/leap.png",
+    links: [{ label: "Live", href: "https://leap.woxsen.edu.in/" }],
+  },
+
+ {
+  name: "SecureDocChain",
+  description:
+    "SecureDocChain is a decentralized, zero-knowledge document sharing platform built on Polygon. It enables users to securely upload, manage, and share sensitive documents using client-side AES-256 encryption and IPFS storage. It ensures complete data privacy and tamper-proof auditing through smart contract-based access controls, verifiable access logs, and expiring cryptographic share tokens.",
+  tech: ["Solidity", "Next.js", "TypeScript", "Ethers.js", "IPFS (Pinata)", "Web Crypto API"],
+  image: "/Static/secureDocChain.png",
+  links: [{ label: "Live", href: "https://secure-document-sharing.vercel.app/" }],
+},
+
+  {
     name: "Woxsen Crypto Exchange",
     description:
       "WCE is an educational decentralized trading platform built on Ethereum, enabling department-based ERC-20 token trading within the university ecosystem. It demonstrates real-world DeFi concepts including tokenization, staking mechanisms, and smart contract–driven transactions with seamless Web3 integration.",

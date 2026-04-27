@@ -18,6 +18,7 @@ const roles: Role[] = [
     description:
       "Leading development of enterprise-grade blockchain infrastructure, DeFi protocols, and full-stack Web3 applications across education, healthcare, and payment systems.",
     highlights: [
+      "Built L.E.A.P., an enterprise-grade Coursera-style e-learning platform for 350+ MBA students at Woxsen University, replacing paper credentialing with blockchain-issued, QR-verifiable certificates via Hyperledger Besu and Solidity smart contracts.",
       "Architected and deployed a private EVM-compatible DEX on Hyperledger Besu (QBFT), implementing custom swap, liquidity, and fee logic inspired by Uniswap V3.",
     "Built AssetenceRails, a commerce-first blockchain payment infrastructure with MetaMask integration, multi-chain (Ethereum/Polygon) support, and fiat on/off-ramp via MoonPay.",
     "Developed SecureVault using Lit Protocol + IPFS with smart contract anchoring on BSC Testnet and The Graph indexing for decentralized credential management.",
