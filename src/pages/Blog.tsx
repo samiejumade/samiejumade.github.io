@@ -49,6 +49,42 @@ const BLOG_POSTS: BlogPost[] = [
     sourceIcon: "M",
   },
   {
+    id: "medium-secure-doc-chain",
+    title: "When Delete Doesn't Mean Delete: Secure Document Sharing with Blockchain & IPFS",
+    pubDate: "2025-07-13",
+    link: "https://surl.li/enakcz",
+    author: "Samir Jumade",
+    thumbnail: "/Static/SecureDocChainArticle.png",
+    description:
+      "Exploring how SecureDocChain combines client-side encryption, IPFS decentralized storage, and blockchain-backed audit trails to make secure document sharing, access control, and deletion verifiable rather than trust-based.",
+    source: "Medium",
+    sourceIcon: "M",
+  },
+   {
+    id: "medium-securevault",
+    title: "Building a Decentralized Password Manager",
+    pubDate: "2025-07-27",
+    link: "https://surl.li/qgdyhc",
+    author: "Samir Jumade",
+    thumbnail: "/Static/SecuReVaultThumbNail.png",
+    description:
+      "Building SecureVault with client-side AES-256-GCM encryption, IPFS decentralized storage, and blockchain-based ownership for secure, user-controlled password management.",
+    source: "Medium",
+    sourceIcon: "M",
+  },
+   {
+    id: "medium-ai-smart-contract-auditors",
+    title: "Can AI Replace Smart Contract Auditors?",
+    pubDate: "2025-07-21",
+    link: "https://surl.li/ndoxzh",
+    author: "Samir Jumade",
+    thumbnail: "/Static/AISmartContractAuditors.png",
+    description:
+      "Exploring how AI is reshaping smart contract security, where automated auditing excels, where it falls short, and why human expertise remains critical for business logic, economic exploits, and protocol-level risks.",
+    source: "Medium",
+    sourceIcon: "M",
+  },
+  {
     id: "medium-elderly",
     title: "A Silent Funeral: Society's Neglect of Its Elders",
     pubDate: "2025-01-05",
@@ -95,19 +131,21 @@ export default function Blog() {
                     "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=700";
                 }}
               />
-              <span className="blog-source-badge">
-                {post.sourceIcon === "M" ? (
-                  <svg height="14" viewBox="0 0 195 195" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 47L77 102L22 157H48L90 115L132 157H158L103 102L158 47H132L90 89L48 47H22Z"/>
-                  </svg>
-                ) : (
-                  post.sourceIcon
-                )}
-                {post.source}
-              </span>
             </div>
             <div className="card-content">
-              <p className="blog-date">{formatDate(post.pubDate)}</p>
+              <div className="blog-meta-row">
+                <span className="blog-source-badge">
+                  {post.sourceIcon === "M" ? (
+                    <svg height="14" width="14" viewBox="0 0 195 195" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 47L77 102L22 157H48L90 115L132 157H158L103 102L158 47H132L90 89L48 47H22Z"/>
+                    </svg>
+                  ) : (
+                    post.sourceIcon
+                  )}
+                  {post.source}
+                </span>
+                <span className="blog-date">{formatDate(post.pubDate)}</span>
+              </div>
               <h2 className="blog-title">
                 <a href={post.link} target="_blank" rel="noopener noreferrer">
                   {post.title}
@@ -144,7 +182,7 @@ export default function Blog() {
 
       <div className="blog-cta">
         <a
-          href="https://medium.com/@samir.woxsen"
+          href="https://medium.com/@samirjumade"
           target="_blank"
           rel="noopener noreferrer"
           className="blog-cta-btn"

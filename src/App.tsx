@@ -1,10 +1,25 @@
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
 
 function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [hideHeader, setHideHeader] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Reset to Home page and scroll to top on initial mount / page refresh
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+
+    if (location.pathname !== "/" || window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname);
+      navigate("/", { replace: true });
+    }
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -39,6 +54,35 @@ function App() {
     };
   }, []);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="app-container">
       <div
@@ -47,7 +91,12 @@ function App() {
       />
       <header className={`site-header${hideHeader ? " hidden" : ""}`}>
         <nav className="nav">
-          <a className="brand" href="/" aria-label="Home">
+          <a
+            className="brand"
+            href="/"
+            onClick={handleBrandClick}
+            aria-label="Home"
+          >
             <svg
               width="36"
               height="36"
@@ -77,11 +126,24 @@ function App() {
             </svg>
           </a>
           <div className="links">
-            <a href="/#about">About</a>
-            <a href="/#projects">Projects</a>
-            <a href="/#blog">Blog</a>
-            <a href="/#experience">Experience</a>
-            <a href="/#contact">Contact</a>
+            <a href="/#about" onClick={(e) => handleNavClick(e, "about")}>
+              About
+            </a>
+            <a href="/#projects" onClick={(e) => handleNavClick(e, "projects")}>
+              Projects
+            </a>
+            <a href="/#blog" onClick={(e) => handleNavClick(e, "blog")}>
+              Blog
+            </a>
+            <a
+              href="/#experience"
+              onClick={(e) => handleNavClick(e, "experience")}
+            >
+              Experience
+            </a>
+            <a href="/#contact" onClick={(e) => handleNavClick(e, "contact")}>
+              Contact
+            </a>
           </div>
         </nav>
       </header>
